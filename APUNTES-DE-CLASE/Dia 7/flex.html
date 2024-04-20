@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        .box{
+            height: 100px;
+            width: 100px;
+            background-color: #eb9d37;
+            border: 3px solid black;
+            border-radius: 5px;
+        }
+
+        
+
+        .flexx{
+            /* propiedades flex */
+            display: flex;
+            gap: 4px;
+
+            /* propiedades css */
+            color: white;
+            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
+            font-weight: bold;
+            font-size: x-large
+        }
+.purpleBox{
+    background: purple;
+    padding: 5px;
+    height: 200px;
+
+   
+
+}
+        .ej1{
+            flex-direction: row-reverse
+            /* flex-direction: +
+            row;
+            row-reverse;
+            column;
+            colum-reverse;  */
+
+        }
+
+        .ej2{
+            flex-wrap: wrap;
+            /* cuando elemento es demasiado pequeño se va a la siguiente linea
+            no wrap; wrap-reverse (los va acomodando arriba);
+             */
+        }
+
+        .ej3{
+            flex-direction: row;
+            justify-content: space-around;
+            /* Modifica el alinedo en el eje principal (row o column)
+             */
+             
+
+        }
+
+        .ej4{
+            align-items: flex-start;
+
+        }
+        </style>
+</head>
+<body>
+    <!-- Apuntes DIA 7:
+FLEXBOX:
+Lo que nos permite es crear diseños flexibles y dinámicos en un contenedor, distribuyendo el espacio disponible entre los elementos de una manera más eficiente y predecoble que los modelos de diseño tradicionales, como el uso de flotas o posicionamentos -->
+<h3>FLEX DIRECTION</h3>
+    <Div class="flexx ej1">
+<div class="box 1">1</div>
+<div class="box 2">2</div>
+<div class="box 3">3</div>
+<div class="box 4">4</div>
+<div class="box 5">5</div>
+<div class="box 6">6</div>
+    </Div>
+
+    <h3>FLEX WRAP</h3>
+    <Div class="flexx ej2">
+<div class="box 1">1</div>
+<div class="box 2">2</div>
+<div class="box 3">3</div>
+<div class="box 4">4</div>
+<div class="box 5">5</div>
+<div class="box 6">6</div>
+</Div>
+
+<h3>FLEX JUSTIFY CONTENT</h3>
+    <Div class="flexx ej3 purpleBox">
+<div class="box 1">1</div>
+<div class="box 2">2</div>
+<div class="box 3">3</div>
+<div class="box 4">4</div>
+<div class="box 5">5</div>
+<div class="box 6">6</div>
+</Div>
+
+<h3>FLEX ALIGN ITEMS</h3>
+    <Div class="flexx ej4 purpleBox">
+<div class="box 1">1</div>
+<div class="box 2">2</div>
+<div class="box 3">3</div>
+<div class="box 4">4</div>
+<div class="box 5">5</div>
+<div class="box 6">6</div>
+</Div>
+
+</body>
+</html>
