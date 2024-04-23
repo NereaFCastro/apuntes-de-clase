@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout vertical</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+
+            /* height:100vh del view height (view port) */
+        }
+
+        .header, .footer{
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
+
+        .content{
+            flex:1;
+            padding: 10px;
+            background-color: #e0e0e0;
+        }
+        /* flex 1: que ocupa todo lo que pueda */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="content">Content</div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+</html>
