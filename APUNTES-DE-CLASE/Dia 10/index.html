@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+
+    <style>
+
+        *{
+            margin:0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .body{
+            padding: 20px;
+        }
+    
+        .container{
+            display: flex;
+            margin-bottom: 50px;
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .yellow{
+            background-color: yellow;
+            top:20px;
+            left:20px;
+        }
+
+        .static{
+            position: static;
+
+        }
+
+        .relative{
+        position: relative;
+
+        }
+
+        .absolute{
+
+        position: absolute;
+        }
+
+        .fixed{
+        position: fixed;
+
+
+        }
+
+        .sticky{
+            position: sticky;
+
+
+        }
+
+    </style>
+</head>
+<body>
+    <h2>POSITION STATIC</h2>
+    <p>Esta poisción es la posiciñon por default. <br> No se aplica ninguna propiedad de position. Y se muestra en el flujo normal del coumento</p>
+
+    <div class="container">
+        <div class="box"></div>
+        <div class="box yellow static">Static</div>
+        <div class="box"></div>
+    </div>
+
+    <h2>POSITION RELATIVE</h2>
+    <p>Si afecta el position (top-left-right-bottom). Ocupa espacio en la página</p>
+
+    <div class="container">
+        <div class="box"></div>
+        <div class="box yellow relative">Relative</div>
+        <div class="box"></div>
+    </div>
+
+        <h2>POSITION ABSOLUTE</h2>
+        <p>Afecta al position pero no ocupa espacio extra. Se posiciona respecto al padre más cercano que tenga una propiedad de position DISTINTA A STATIC</p>
+
+        <div class="container" style="position: relative;">
+            <div class="box"></div>
+            <div class="box yellow absolute">Absolute</div>
+            <div class="box"></div>
+        </div>
+
+        <h2>POSITION FIXED</h2>
+        <p>Afecta al position (top-right-bottom-left). No ocupa espacio. Se posiciona con respecto a la ventana del navegador. Se mantiene fijo en la pantalla y no se mueve con el scroll.</p>
+
+        <div class="container">
+            <div class="box"></div>
+            <div class="box yellow fixed" style="left: unset; right: 20px; bottom: 20px; top: unset;">Fixed</div>
+            <div class="box" style="height: 1000px;"></div>
+        </div>
+
+        <h2>POSITION STICKY</h2>
+        <p>Afecta al position (top-right-bottom-left). Se posiciona respecto a la ventana del navegador y se mantiene fijo en la pantalla hasta que el elemento padre se va de pantalla.</p>
+
+        <div class="container">
+            <div class="box"></div>
+            <div class="box yellow sticky"> sticky</div>
+            <div class="box" style="height: 2000px;"></div>
+        </div>
+
+</body>
+</html>

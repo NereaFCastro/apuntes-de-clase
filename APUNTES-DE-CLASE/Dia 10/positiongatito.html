@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        img {
+            opacity: 0.3;
+            width: 100%;
+        }
+
+        .container {
+            display: flex;
+            width: 300px;
+            position: relative;
+
+
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+
+
+        }
+
+        .topleft {
+            position: absolute;
+
+
+        }
+
+        .topright {
+            position: absolute;
+
+        }
+
+        .bottomleft {
+            position: absolute;
+
+
+        }
+
+        .bottomright {
+            position: absolute;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="https://images.hola.com/imagenes/mascotas/20201104178485/consejos-gatos-para-principiantes/0-884-859/gatito-m.jpg?tx=w_680"
+            alt="gatito">
+        <div class="center">Centro</div>
+        <div class="topleft" style="top: 10px; left: 10px;">Arriba-Izq</div>
+        <div class="topright" style="right:10px; top: 10px;">Arriba-Der</div>
+        <div class="bottomleft" style="bottom: 10px; left: 10px;">Abajo-Izq</div>
+        <div class="bottomright" style="right:10px; bottom:10px">Abajo-Der</div>
+    </div>
+</body>
+
+</html>
