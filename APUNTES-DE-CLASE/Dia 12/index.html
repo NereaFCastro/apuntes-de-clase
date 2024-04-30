@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <h1>Formularios</h1>
+
+    <!-- Atributos:
+    "action": a quien le enviaré la información 
+"method": tipo de request (GET y POST
+El método GET (a través URL) tiene un límite de 2048 carácteres, en cambio el método POST (a través body) soporta hasta 32mb
+
+Inputs versión vieja HTML 4: submit, reset, text, password, file,image, hidden. 
+HTML 5 tenemos: button, number, tel, url, email, datr, time, color range. 
+HTML  5.1: month, week, datetime-local 
+
+NAME: Identificador único de la "variable"
+value: el valor inicial
+required: campo obligatorio
+placeholder: mensaje al usuario (no confundir con el value)
+maxlenght y minlenght: máximo y mínimo de carácteres
+autofocus: seleccionar automáticamente el input elegido
+disabled: desactivar el input
+
+type=reset : limpia el formulario-->
+    <form action="./recibirform.php>" method="GET">
+
+        <!-- todos los inputs tienen que tener un nombre obligatoriamente!! ESTUDIAR GET Y POST). -->
+
+        <input type="text" autofocus name="usuario" required>
+        <input type="password" name="" value="1234">
+
+        <input type="number" name="altura"  min="20" max="40" step="8">
+
+
+        <h3>User</h3>
+        <input type="text" placeholder="Ingrese su nombre..." maxlength="5">
+        <input type="date" name="fecha">
+
+
+<input type="radio" value="1" name="sabor_favorito">opcion 1 <br>
+<input type="radio" value="2" name="sabor_favorito">opcion 1 <br>
+<input type="radio" value="3" name="sabor_favorito">opcion 1 <br>
+<input type="radio" value="4" name="sabor_favorito">opcion 1 <br>
+
+
+        <input type="submit">
+
+        <button type="submit" onclick="Saludar()"> <h3>Enviar</h3> </button>
+
+<button>Enviar</button>
+    </form>
+
+    <script>
+        function Saludar (){
+            alert ("HOLA ALUMNOS");
+        }
+
+        function Despedirse (){
+            alert("Chaaaau!");
+        }
+    </script>
+    
+    
+</body>
+</html>
