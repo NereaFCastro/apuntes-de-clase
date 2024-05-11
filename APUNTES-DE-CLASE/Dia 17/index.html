@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+</head>
+<body>
+    <h1 class="title">Media Queries</h1>
+
+    <section>
+        <h2>¿Qué son las Media Queries (MQ)?</h2>
+        <p>Declaración en CSS que nos permite definir como se va a visualizar nuestra web.</p>
+        <h2>Sintaxis de MQ</h2>
+        <p>
+            Una MQ se compone de multiples parter:
+            <ul>
+                <li>Keyword: <strong>@media</strong> es una palabra clave, reservada</li>
+                <li>MediaType: Un tipo de medida. Ej: screen, print, all</li>
+                <li>Operador/es: EJ: and, not, only</li>
+                <li>Breakpoints: La condición a cumplirse. Ej: max-width, min-width</li>
+                <li>Reglas CSS: Bloque de reglas</li>
+            </ul>
+            <style>
+                /* keyword MediaType Operador/es (breakpoint) { reglass de CSS }*/
+                
+                .title {
+                    color: blue;
+                }
+                
+                @media screen and (min-width: 600px) {
+                    .h1 {
+                        color: red;
+                    }
+
+
+                }
+
+               
+                @media print{
+                    .title {
+                        display: none;
+                        
+                    }
+                    h2{
+                        color: green;
+                    }
+                }
+
+            </style>
+        </p>
+
+        <h2>Tipos de Media (Screen/Print)</h2>
+        - Print: Destinado a material de vista de impresión.<br>
+        - Screen: Pantallas s color (Es el utilizado por defecto)
+        - All: Todos los dispositivos <br>
+        - Pueden encontrar otros tipos que ya no se usan: tv, handheld, speech, braille, e.t.c <br>
+
+        <style>
+           .titulo2{
+                 background-color: red;
+                } 
+                
+            @media screen and (min-width: 600px){
+                .titulo2{
+                    background-color: aquamarine;
+                }
+                
+            }
+            
+
+            /*Los media queries DEBEN ir por debajo poruqe no tienen mayor especificidad que las reglas CSS */
+        </style>
+
+        <h3 class="titulo2">Tips para utilizar MediaQueries</h3>
+
+        <ul>
+            <li>Los MQ sobreescriben las reglas de CSS anteriores, PERO no poseen mayor especificidad que las otras reglas por eso debemos agregarlas al final del documento</li>
+            <li> Deben utilizar los mismos selectores que quieran reemplazar</li>
+            <li>PENSAR BIEN LOS BREAKPOINTS</li>
+            <li>Podemos utilizar un @media para cada selector o una para todos</li>
+        </ul>
+
+        <h3 class="titulo2">Mobile vs Tablet vs Desktop</h3>
+        - Mobile (55%): 320px - 768px<br>
+        - Tablet (2%): 768px -1024px<br>
+        - Desktop (43%): 1024px- 1920px o más<br>
+
+        <style>
+            /*Mobile*/
+            /*Reglas de Mobile First*/
+            .titulo2{
+                 background-color: red;
+                } 
+            
+            .parrafo{
+                color: red;
+            }
+            /*Tablets*/
+            @media (min-width:768px) and (max-width:1024px) {
+                .titulo2{
+                    color: blue;
+                }
+            }
+
+            /*Desktop*/
+            @media screen and (min-width:1024px) {
+                .titulo2 {
+                    color: green;
+                }
+            }
+
+
+        </style>
+
+    <h3>Uso de MQ en HTML</h3>
+    Podemos utilizar los @media directamente el el HTML utilizando el atributo "media". Antes que nada, debemos asegurarnos de que nuestro HTML incluya la etiqueta META en el head. <strong>meta name="viewport" content="width=device-width, initial-scale=1.0"</strong> 
+
+    <ul>
+        <li>Etiquetas de Link (NO RECOMENDADA): 
+            < link rel="stylesheet" href="" media="screen and (min-width:768px)"></li>
+        <li>Etiqueta en style (NO RECOMENDADA):
+            " style media= "screen and (min-width:768px)" "
+        </li>
+        <li>
+            Etiqueta de picture:
+            <picture>
+                <source media="(min-width: 650px)" srcset="">
+                <source media="(min-width: 450px)" srcset="">
+                <img src="img" alt="mifoto">
+            </picture>
+        </li>
+    </section>
+
+    <!--Esto repasar a partir de 1:50 -->
+
+
+</body>
+</html>
