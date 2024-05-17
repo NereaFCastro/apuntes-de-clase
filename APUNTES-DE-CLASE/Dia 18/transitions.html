@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        body{
+            display:flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+  
+    .box{
+    width: 100px;
+    height: 100px;
+    background-color: red; 
+    transition: width 2s, height 2s, background-color 2s; 
+}
+.box:hover {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+}
+.box2{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transition: rotate 1s, width 2s, height 2s, background-color 2s; 
+}
+.box2:hover {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+}
+
+.box3{
+    
+    width: 400px;
+    height: 400px;
+    border-radius: 400px;
+    background-color: orange;
+    transition:  width 6s, height 6s, background-color 8s; 
+}
+.box3:hover {
+    width: 600px;
+    height: 600px;
+    background-color: orangered;
+}
+
+/*
+.box3{
+    
+   border: 4px solid dotted
+}
+.box3:hover {
+    width: 600px;
+    height: 400px;
+    background-color: blue;
+}
+
+*/
+
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+<!--
+    <a href="" class="box box3"></a>-->
+</body>
+</html>

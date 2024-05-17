@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad MQ y BEM</title>
+    <style>
+
+        body{
+            display: flex;
+            flex-direction: column;
+            
+
+        }
+        .contenedor{
+            background-color: beige;
+            display: flex;
+            height: 100vh;
+            
+
+            justify-content: center;
+            align-items: center;
+
+
+        }
+        .contenedor__h3--mobile{
+            display: none;
+            
+        }
+
+        .contenedor__h3--tablet{
+            display: none;
+            
+        }
+
+        .contenedor__h3--desktop{
+            display: block;
+            
+            
+        }
+        
+        @media (min-width:320px) and (max-width:768px) {
+                .contenedor{
+                    background-color: aqua;
+                }
+                .contenedor__h3--mobile{
+                    color: black;
+                    display: block;
+                    text-align: center;
+                    
+                }
+                .contenedor__h3--tablet{
+                    display: none;
+                }
+                .contenedor__h3--desktop{
+                    display: none;
+                }
+
+            }
+        @media (min-width:768px) and (max-width:1023px) {
+
+            .contenedor{
+                    background-color: orange;
+                }
+            .contenedor__h3--mobile{
+                    display: none;
+                }
+             .contenedor__h3--tablet{
+                    color: black;
+                    display: block;
+                    text-align: center;
+                }
+            .contenedor__h3--desktop{
+                    display: none;
+                }
+            }
+
+    
+            
+        
+          
+        
+        
+
+    </style>
+</head>
+<body>
+    <main class="contenedor">
+
+        <h1 class="contenedor__h1--mobile">Mobile</h1>
+        <h1 class="contenedor__h1--tablet">Tablet</h1>
+        <h1 class="contenedor__h1--desktop">Desktop</h1>
+
+        <picture class="imagen">
+            <source media="" srcset="">
+            <source media="" srcset="">
+            <img class="imagen__img" src="" alt="">
+        </picture>
+       
+
+    </main>
+</body>
+</html>
