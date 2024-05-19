@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic web</title>
+</head>
+<body>
+<!-- 
+    <p>
+        <h3>Header</h3>
+        <b>Definición:</b> Cabecera de una sección o un documento <br>
+        <b>Semantic:</b> Con esta sección identificamos dónde estará nuestro logo, nuestro título principal (<h1></h1>) y la barra de navegación. ETC... 
+    </p>
+   
+
+   
+    <p>
+        <h3>Nav</h3>
+        <b>Definición:</b>Normalmente se coloca dentro del header. Son los elementos que nos permitirán movernos por el sitio WEB<br>
+        <b>Semantic:</b> Con esta etiqueta identificamos las secciones que poseen enlaces de navegación, y facilitan a los motores de búsqueda y usuarios, movernos entre páginas. 
+    </p>
+   
+
+  
+    <p>
+        <h3>Section</h3>
+        <b>Definición:</b> Es un espacio genérico dentro del documentro (div)<br>
+        <b>Semantic:</b> Ayuda a organizar y estructurar el contenido de la página en secciones lógicas que mejoran la comprensión del sitio 
+    </p>
+   
+
+  
+    <p>
+        <h3>Article</h3>
+        <b>Definición:</b> <br>
+        <b>Semantic:</b> 
+    </p>
+     -->
+
+    <header>
+        <h1>Web Semántica</h1>
+        ELEMENTOS CON SIGNIFICADO!
+        <!--NAV no hay porque no tenemos enlaces a otras páginas solo nos quedaremos en la página de inicio-->   
+       </header>
+   
+       <main>
+           <section>
+           Tipos de etiquetas:
+               <ul>
+                   <li>Ejemplos de etiquetas NO semánticas: DIV, SPAN</li>
+                   <li>Etiquetas Semánticas: IMG, FORM, TABLE, ARTICLE</li>
+               </ul>
+           </section>
+   
+           <section>
+           Etiquetas SEMÁNTICAS PRINCIPALES:
+               <article>
+                   <h3>Header</h3>
+                   <b>Definición:</b> Cabecera de una sección o página <br>
+                   <b>Semantic:</b> Con esta sección identificamos dónde estará nuestro logo, nuestro título principal (<h1></h1>) y la barra de navegación. ETC... 
+               </article>
+   
+               <article>
+                   <h3>Nav</h3>
+                   <b>Definición:</b>Normalmente se coloca dentro del header. Son los elementos que nos permitirán movernos por el sitio WEB<br>
+                   <b>Semantic:</b> Con esta etiqueta identificamos las secciones que poseen enlaces de navegación, y facilitan a los motores de búsqueda y usuarios, movernos entre páginas. No todos los links tienen que estar dentro de un NAV.
+               </article>
+      
+               <article>
+                   <h3>Main</h3>
+                   Crea un contenedor para el contenido principal
+               </article>
+   
+               <article>
+                   <h3>Section</h3>
+                   Dónde se agrupan los contenidos relacionados entre sí. Normalmente incluye un título y una web se compone de varias secciones, cada una con su propio contenido y propósito. Es un apartado de la página web que agrupa un contenido relacionado. Normalmente está dentro del MAIN. Suelen incluir un título y una web se compone de varias secciones, cada una con su propio contenido y propósito<br> Ejemplos:
+                   <ul>
+                       <li>Capítulos</li>
+                       <li>Introducción</li>
+                       <li>Noticias</li>
+                       <li>Productos</li>
+                       <li>Un hero</li>
+                       <li>Información de contacto</li>
+                   </ul>
+               </article>
+   
+   
+               <article>
+                   <h3>Article</h3>
+                   <b>Definición:</b> Define un contenido independiente que puede existir por si mismo <strong>INFEPENDIENTE</strong> El mísmo puede ser compartido y utilizado en otros sitios o secciones<br> El article puede contener múltiples cosas no hay una respuesta correcta simplemente ayuda a los navegadores y a los usuarios a tratar de comprender nuestro código. Sirve para hacer un buen SEO, ya que si tenemos bien utilizada nuestra semántica WEB el navegador puede sacar ciertos elementos y hacer publicidad automática.
+                   Ejemplos de uso:
+                   <ul>
+                       <li>Un post de un blog </li>
+                       <li>UN articulo de una revista</li>
+                       <li>Comentario de usuario</li>
+                       <li>Tarjeta de un producto</li>
+                   </ul>
+               </article>
+   
+   
+               <article>
+               <!--<aside>-->
+                   <h3>Aside</h3>
+                   Contenido relacionado a nuestro contenido principal pero indirectamente. Se utiliza mucho para hacer publicidad. No tiene que estar necesariamente a un lado.<br>
+                   Ejemplos de USO:
+                   <ul>
+                       <li>Publicidad</li>
+                       <li>Biografía de un autor</li>
+                       <li>Enlaces relacionados</li>
+                       <li>Información de perfil</li>
+                   </ul>
+               <!--</aside>-->
+               </article>
+   
+       
+               <article>
+                   <h3>Footer</h3>
+                   Pie de página, sitio o sección. Pueden haber múltiples por página, pero no puede haber un footer dentro de otro, ni dentro de una header<br>Ejemplos de USO:
+                   <ul>
+                       <li>Contacto</li>
+                       <li>Términos y condiciones</li>
+                       <li>SiteMap (Permite ver todas las secciones de un sitio web, por niveles)(Sirve para ayudar a los buscadores a visitar al completo nuestra página WEB en un tiempo reducido)</li>
+                       <li>Formulario de contacto</li>
+                       <li>Mapa</li>
+                   </ul>
+               </article>
+   
+               <article>
+                   <h3>Figure</h3>
+                   Definir un elemento autocontenido como puede ser una imagen, un gráfico, una tabla etc..<br>
+                   Dentro de ella utilizaremos otra etiqueta Figcaption(Esta etiqueta describe el gráfico, imágen, tabla etc...EL TÍPICO PIE DE FOTO) 
+               </article>
+   
+               <article>
+                   <h3>Mark</h3>
+                   Resaltar contenido. Se suele mostrar color amarillo.
+               </article>
+           </section>
+       </main>
+       
+    
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modo claro/oscuro</title>
+
+    <style>
+
+        /*-----------------------------------*/
+        /* Inicio estilos para el modo claro */
+        /*-----------------------------------*/
+
+        body{
+            background-color: white;
+            color: #333;
+        }
+
+        .contenido{
+            max-width: 660px;
+            margin: 0 auto;
+            text-align: center;
+            
+        }
+
+        .caja{
+            width: 200px;
+            height: 200px;
+            background-color: lightgray;
+            margin: 20px auto;
+        }
+
+
+        /*-----------------------------------*/
+
+
+
+
+
+
+
+        /*-------------------------------------*/
+        /* Inicio estilos para el modo oscuro */
+        /*-----------------------------------*/
+        
+        body.modo-oscuro {
+            background-color: #333;
+            color: white;
+        }
+
+        body.modo-oscuro .caja { 
+            background-color: #222;
+        }
+
+
+
+
+
+
+
+         /*-----------------------------------*/
+
+
+    </style>
+</head>
+<body>
+
+    <main class="contenido">
+
+        <h1>Nuestra primer web inteligente</h1>
+        <img src="" alt="">
+
+        <div class="caja">Contenido</div>
+
+        <button id="btn-claro-oscuro">Modo claro/oscuro</button>
+    
+</main>
+    
+<script>
+
+    // con JS, podemos agarrar elementos de nuestra web con los selectores CSS
+
+     // 1) agregamos el boton con el ID
+    const btn = document.querySelector("#btn-claro-oscuro");
+
+    // 2) agregamos el body con el tag <body>; no es obligatorio, también lo podríamos hacer con el id o la clase
+    const elbody = document.querySelector ("body");
+
+    console.log(elbody);
+
+    // 3) cuando le hago click a "btn"
+
+    btn.addEventListener("click", () => {
+
+    // 4)poner la clase "modo-oscuro" al body "elbody"
+
+    //toggle agrega la clase cuando no existe, y la quita cuando si existe
+
+    elbody.classList.toggle("modo-oscuro"); 
+    //no hace falta poner punto porque ya sabe que es una clase
+
+
+    });
+
+   
+
+
+
+// Para asegurarnos de que se cargó bien nuestro botón podemos escribir console.log(btn); y al darle inspeccionar en Google, en el apartado de consola, nos debería de aparecer 
+
+</script>
+
+
+</body>
+</html>
