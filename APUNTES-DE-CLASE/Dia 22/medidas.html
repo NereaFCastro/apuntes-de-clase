@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidades de medida</title>
+
+    <style>
+        :root{
+            font-size: 10px; /*Tamaño por defecto 1rem=16px*/
+        }
+        .px-box{
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            margin-bottom: 20px;
+        }
+
+        .em-box{
+            width: 20em;
+            height: 10em;
+            background-color: lightcoral;
+            margin-bottom: 20px;
+        }
+
+        .rem-box{
+            font-size: 0.5rem; /*10px*/
+            width: 20rem;
+            height: 5rem;
+            background-color: lightgreen;
+            margin-bottom: 20px;
+        }
+
+        .percent-box{
+            width: 50%;
+            height: 100px;
+            background-color: lightsalmon;
+            margin-bottom: 20px;
+        }
+
+        .box-container{
+            font-size: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+        <h1>Ejemplos de Unidades de Medida</h1>
+
+        <div class="box-container">
+        <div class="px-box">
+            Caja con medidas (200px x 100px)
+        </div>
+        <div class="em-box">
+            Caja con medidas en em (20 em x 10 em) <!--En base al tamaño de fuente del padre-->
+        </div>
+        <div class="rem-box">
+            Caja con medidas en rem (10 rem x 5rem) 
+        </div>
+        <div class="percent-box">Cajas con medidas en % (50% del contenedor)</div>
+    </div>
+
+    <style>
+        .boton{
+            font-size: 5rem;
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+        }
+    </style>
+
+    <button class="boton">Contactar</button>
+</body>
+</html>

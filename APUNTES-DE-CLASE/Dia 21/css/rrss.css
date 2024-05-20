@@ -1,0 +1,19 @@
+
+
+/*Las variables es como un contenedor con un nombre donde vamos a poner información adentro*/
+:root{
+    --fb-color: #4267b2;
+    --x-color: #000;
+    --insta-color: #E1306C;
+    --lkdin-color: #2867B2;
+    --yt-color: #ff0000;
+    --lion-color:#db9601
+
+}
+
+
+.icons{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+}

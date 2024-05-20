@@ -1,0 +1,118 @@
+
+/*Las variables es como un contenedor con un nombre donde vamos a poner información adentro*/
+:root{
+    --bg-primary: #fff;
+    --bg-secondary: #f0f0f0;
+    --txt-primary: #000;
+    --txt-secondary: #222;
+
+    --box-shadow: 1px 1px 5px rgb(0,0,0,0.5);
+}
+
+/*Modo claro/oscuro*/
+.u-Dark{
+    --bg-primary: #000;
+    --bg-secondary: #222;
+    --txt-primary: #fff;
+    --txt-secondary: #ddd;
+
+    --box-shadow: 1px 1px 5px rgb(255,255,255,0.5);
+}
+
+
+                        /*Clases reutilizables (UTILITIES)*/
+/*u-Dark es una utilidad también*/
+/*Estas utilidades se añaden a los elementos en forma de clases, y cambiarán el aspecto según hallamsos configurado estas utilidades, en este caso utilizaremos las varialbres ya configuradas arriba en el 
+:root{
+    --bg-primary: #fff;
+    --bg-secondary: #f0f0f0;
+    --txt-primary: #000;
+    --txt-secondary: #222;
+
+    --box-shadow: 1px 1px 5px rgb(0,0,0,0.5);
+}
+*/
+.u-bgPrimary{
+    background: var(--bg-primary);
+} /*A la utilidad .u-bgPrimary le daremos la variable --bg-primary lo que significa que le aplicará a todo lo que le demos esta clase la variable --bg-primary que este caso cambiará el fondo a este color:
+    --bg-primary: #fff;
+*/
+
+.u-bgSecondary{
+    background: var(--bg-secondary);   
+} /*A la utilidad .u-bgSecondary le daremos la variable --bg-secondary lo que significa que le aplicará a todo lo que le demos esta clase la variable --bg-secondary que este caso cambiará el fondo a este color:
+    --bg-secondary: #f0f0f0;
+*/
+
+.u-txtPrimary{
+    color: var(--txt-primary);
+} /*A la utilidad .u-txt-Primary le daremos la variable --bg-primary lo que significa que le aplicará a todo lo que le demos esta clase la variable --bg-primary que este caso cambiará el fondo a este color:
+--txt-primary: #000;
+*/
+
+.u-txtSecondary{
+    color: var(--txt-secondary);
+}/*A la utilidad .u-txt-Secondary le daremos la variable --bg-secondary lo que significa que le aplicará a todo lo que le demos esta clase la variable --bg-secondary que este caso cambiará el fondo a este color:
+--txt-secondary: #222;
+*/
+
+.u-boxShadow{
+    box-shadow: var(--box-shadow);
+}/*A la utilidad .u-boxShadow le daremos la variable --box-shadow lo que significa que le aplicará a todo lo que le demos esta clase la variable --box-shadow que este caso cambiará el fondo a este color:
+--box-shadow: 1px 1px 5px rgb(255,255,255,0.5);
+*/
+
+
+
+/*Modo Row/Modo Col*/
+
+.u-flexCol{
+    display: flex;
+    flex-direction: column;
+}
+
+.u-flexRow{
+    display: flex;
+    flex-direction: row;
+}
+
+/*Controller*/
+.Controllers{
+    position: fixed;
+    bottom:20px;
+    right: 10px;
+    
+    /*ESTO SIRVE PARA CENTRARLO DE OTRA MANERA
+    left:50%;
+    transform: translate(-50%)*/
+
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+
+    
+}
+
+.Btn{
+color: var(--txt-primary); /*Esto significa que el el texto del botón lleva el color de texto primario*/
+background: var(--bg-primary); /*El fondo de la caja del botón tiene el color de fondo primario*/
+border: none;
+box-shadow: var(--box-shadow);
+
+cursor: pointer; /*Esto es para que cuando pases el cursor por el botón el cursor cambie de flechita a manita*/
+padding: 10px;
+min-width: 100px;
+border-radius: 10px;
+
+display: flex;
+justify-content: center;
+align-items:center;
+
+}
+
+/*Este lo modificamos para hacer un botón distinto para el icono*/
+.Btn--icon{
+    min-width: unset; /*Esto es para borrar cualquier regla previa, puesta con anterioridad en este caso en la clase: Btn*/
+    border-radius: 100%; /*Es una forma de hacer el elemento un círculo perfecto*/
+
+}

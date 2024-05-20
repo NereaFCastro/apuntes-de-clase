@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RRSS - SuiteCSS - Fuentes -Transiciones</title>
+    
+    <!--Fuentes de google
+        Es más rapido y más recomendable usar links que @import-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!--Iconos de Font-Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Iconos de google-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/controllers.css">
+    <link rel="stylesheet" href="css/rrss.css">
+   
+</head>
+<body class="u-bgPrimary">
+    <header class="Header u-txtPrimary">
+        <h1 class="u-txtCrotah">RRSS</h1>
+        <!--Esto sirve para cambiar el tipo de letra con una utilidad-->
+    </header>
+   
+    <main class="Main u-bgSecondary"> <!--Esto es lo que le pone gris-->
+
+        <!--Estos son los iconos que salen en la página principal-->
+
+        <div class="Icons">
+            <div class="IconBox u-bgPrimary IconBox--fb">
+                <a class="IconBox-link" href="">
+                    <div class="IconBox-layers">
+                        <span class="IconBox-span"></span>
+                        <span class="IconBox-span"></span>
+                        <span class="IconBox-span"></span>
+                        <span class="IconBox-span"></span>
+                        <span class="IconBox-span fab fa-facebook-f"></span>
+                    </div>
+                    <div class="IconBox-text">Facebook</div>
+                </a>
+            </div>
+        
+
+            <div class="IconBox u-bgPrimary IconBox--X">
+                <a class="IconBox-link" href="">
+                    <div class="IconBox-layers">
+                        <span class="IconBox-span"></span>
+                        <span class="IconBox-span"></span>
+                        <span class="IconBox-span"></span>
+                        <span class="IconBox-span"></span>
+                        <span class="IconBox-span fa-brands fa-x-twitter"></span>
+                    </div>
+                    <div class="IconBox-text">TweetX</div>
+                </a>
+            </div>
+        
+
+            <div class="IconBox u-bgPrimary IconBox--Insta">
+                <a class="IconBox-link" href="">
+                    <div class="IconBox-layers">
+                        <span class="IconBox-span"></span>
+                        <span class="IconBox-span"></span>
+                        <span class="IconBox-span"></span>
+                        <span class="IconBox-span"></span>
+                        <span class="IconBox-span fab fa-instagram"></span>
+                    </div>
+                    <div class="IconBox-text">Instagram</div>
+                </a>
+            </div>
+        
+
+            <div class="IconBox u-bgPrimary IconBox--lkdin">
+                <a class="IconBox-link" href="">
+                    <div class="IconBox-layers">
+                        <span class="IconBox-span"></span>
+                        <span class="IconBox-span"></span>
+                        <span class="IconBox-span"></span>
+                        <span class="IconBox-span"></span>
+                        <span class="IconBox-span fab fa-linkedin-in"></span>
+                    </div>
+                    <div class="IconBox-text">Linkedin</div>
+                </a>
+            </div>
+        
+
+            <div class="IconBox u-bgPrimary IconBox--yt">
+                <a class="IconBox-link" href="">
+                    <div class="IconBox-layers">
+                        <span class="IconBox-span"></span>
+                        <span class="IconBox-span"></span>
+                        <span class="IconBox-span"></span>
+                        <span class="IconBox-span"></span>
+                        <span class="IconBox-span fab fa-youtube"></span>
+                    </div>
+                    <div class="IconBox-text">Youtube</div>
+                </a>
+            </div>
+      
+
+            <div class="IconBox u-bgPrimary IconBox--lion">
+                <a class="IconBox-link" href="">
+                    <div class="IconBox-layers">
+                        <span class="IconBox-span"></span>
+                        <span class="IconBox-span"></span>
+                        <span class="IconBox-span"></span>
+                        <span class="IconBox-span"></span>
+                        <span class="IconBox-span ">L</span>
+                    </div>
+                    <div class="IconBox-text">rey león</div>
+                </a>
+            </div>
+    </div>
+
+    </main>
+
+    <!--ESTOS SON LOS BOTONES DE ABAJO A LA DERECHA-->
+    <div class="Controllers"> 
+        <button id="btnDirection" class="Btn">Columna</button>
+        <!--No lo ponemos como controllers-btn (Elemento) si no como un bloque directamente por is quiero utilizarlo en otro sitio-->
+
+        <button id="btnDarkLight" class="Btn Btn--icon">
+            <span class="material-symbols-outlined">
+            dark_mode
+            </span></button><!--Esto lo hemos hecho para seleccionar uno de los botones el de Btn Btne--icon tendrá dentro un icono-->
+    </div>
+    <script>
+        // Primero: Declaramos las variables - Con esto seleccionamos o hacemos referencia a cualquier elemento de HTML y lo hacemos con los IDs y las clases, en este caso le hemos dado ID a los dos botones que tenemos en el HTML
+
+        //Llamamos constante a lo que por defecto aparecerá de una manera concreta
+
+        const btnDirection = document.querySelector ("#btnDirection");
+        const btnDarkLight = document.querySelector ("#btnDarkLight")
+        const iconsContainer = document.querySelector (".Icons");
+
+        console.log("btnDirection vale:", btnDirection)
+
+        //Segundo: Hacemos cosas con esas variables
+
+        // vamos a escuchar los clicks sobre los botones, y cambiarle sus clases
+        btnDirection.addEventListener("click", () => {
+            iconsContainer.classList.toggle("u-flexCol")
+            //Condicional IF
+            if (iconsContainer.classList.contains ("u-flexCol") ){
+                //código si se cumple la condición
+                btnDirection.textContent = "Fila";
+            }
+            else{
+                //codigo si NO se cumple la condición
+                btnDirection.textContent = "Columna";
+            }
+        });
+        btnDarkLight.addEventListener("click", () => {
+            document.body.classList.toggle ("u-Dark");
+                if (document.body.classList.contains ("u-Dark")){
+                    // activar el modo light (sol)
+                    btnDarkLight.querySelector("span").innerText="light_mode";
+                } else {
+                    // activar modo noche (Luna)
+                    btnDarkLight.querySelector("span").innerText="dark_mode";
+                }
+        });
+    </script>
+</body>
+</html>
