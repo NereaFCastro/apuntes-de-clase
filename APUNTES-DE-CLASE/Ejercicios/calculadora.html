@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            justify-items: center;
+            margin-top: 500px;   
+            background-color: lightgoldenrodyellow;
+
+        }
+
+        
+
+       
+
+
+
+        button {
+            background-color: lightpink;
+            border-radius: 10px;
+            border: none;
+            width: 50px;
+            height: 30px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <h2>¡Calculaclicks!</h2>
+    <div class="container">
+    <button id="miBtnSuma"> +</button>
+    <button id="miBtnResta"> -</button>
+    <button id="miBtnDivide"> 1/2</button>
+    <button id="miBtnMultiplica"> x5</button>
+</div>
+
+    <h3>Cantidad de clicks</h3>
+    <div id="resultado">0</div>
+
+
+    <script>
+        const miBotonSuma = document.getElementById("miBtnSuma");
+        const miBotonResta = document.getElementById("miBtnResta");
+        const miBotonDivide = document.getElementById("miBtnDivide");
+        const miBotonMultiplica = document.getElementById("miBtnMultiplica");
+
+
+        const divResultado = document.getElementById("resultado");
+
+
+        let numero = 0;
+
+        miBotonSuma.addEventListener("click", () => {
+            numero = numero + 1;
+            divResultado.innerText = numero;
+        })
+
+
+
+        miBotonResta.addEventListener("click", () => {
+            numero = numero - 1;
+            divResultado.innerText = numero;
+        })
+
+        miBotonDivide.addEventListener("click", () => {
+            numero = numero / 2;
+            divResultado.innerText = numero;
+        })
+
+        miBotonMultiplica.addEventListener("click", () => {
+            numero = numero * 5;
+            divResultado.innerText = numero;
+        })
+
+    </script>
+
+    <!-- CALCULADORA QUE SUME RESTE DIVIDA Y MULTIPLIQUE *5 /2 -->
+
+
+</body>
+
+</html>
