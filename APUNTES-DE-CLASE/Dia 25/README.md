@@ -112,11 +112,13 @@ function sumar (a,b){
 ```js
 //PRIMITIVOS
 let texto = "Hola alumnos de CEI";
-let textoConComillas = Hola estoy muy "bien" ;
-let textoConComillasSimples = "I'm Tomi";
+let textoConComillasSimples = Hola estoy muy 'bien' ;
+let textoConComillas = "I'm Tomi";
 let texto = `Quiero comillas simples y dobles;` // template String
 
 let numeros = 123;
+let numeros2= "123"; //"123"
+numero2=number (numero2); //123
 
 let decimales= 22.30;
 let negativo= -5;
@@ -127,14 +129,14 @@ let estaEncendido= false;
 let isPrimary = true;
 let onActive = false;
 
-//REFERENCIALES
+//REFERENCIALES: hace referencia a un lugar (alumnosDeDW). El valor de una constante SI se puede modificar cuando hablamos de arrays y objetos. En una primitiva NO se puede modificar.
 
-//arrays
-let alumnosDeDW = ["Nerea", "David", "Jenny"];
-let edades = [25, 32, 18, 49];
-let listaMixta = [1, "Juan", true];
+//arrays: con corchetes
+const alumnosDeDW = ["Nerea", "David", "Jenny"];
+const edades = [25, 32, 18, 49];
+const listaMixta = [1, "Juan", true];
 
-// objetos
+// objetos: con llaves
 const alumno = { 
     nombre: "Mario", 
     edad: 33, 
@@ -143,9 +145,30 @@ const alumno = {
         edad=34;
     },
     }
+```
 
-    ```
+## Más tipos de datos
 
+- Undefined: es un valor que se asigna a auna vzriable que no tiene valor (se declara pero no se le asignó un valor).
+- Null: valor que se le asigna a una variable para indicar que no tiene valor intencionalmente. 
+- NaN (not a number): valor que obtenemos cuando se esperaba un número pero no lo es.
+- Empty (vacío): un string con valor vacío " 0 ".
+- Funciones
+- Fechas
+
+```javascript
+// otro tipos de datos
+let noDefinido; // undefined
+
+let valNula="texto"; // string
+valNula=null; // null
     
+let noEsNumero=NaN; // not a number
 
+let vacio= ""; // empty
 
+let saludar = function () {
+    console.log("Hola a todos!");
+} // esto es una función
+
+let hoy = new Date (); // en realidad es un objeto
