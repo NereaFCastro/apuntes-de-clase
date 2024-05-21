@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+    <button id="miBtnSuma"> ¡Suma clicks!</button>
+    <button id="miBtnResta"> ¡Resta clicks!</button>
+    <h3>Cantidad de clicks</h3>
+    <div id="resultado">0</div>
+    
+    <script>
+        const miBotonSuma = document.getElementById("miBtnSuma");
+        const miBotonResta = document.getElementById("miBtnResta");
+
+        const divResultado = document.getElementById("resultado");
+
+        
+        let numero=0;
+
+        miBotonSuma.addEventListener("click", () => {
+        numero = numero +1;
+        divResultado.innerText=numero;})
+        
+
+        
+        miBotonResta.addEventListener("click", () => {
+        numero = numero -1;
+        divResultado.innerText=numero;
+
+        })
+
+    </script>
+    
+    
+</body>
+</html>
