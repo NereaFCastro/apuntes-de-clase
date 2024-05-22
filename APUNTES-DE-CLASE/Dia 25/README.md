@@ -120,7 +120,8 @@ let numeros = 123;
 let numeros2= "123"; //"123"
 numero2=number (numero2); //123
 
-let decimales= 22.30;
+let decimales= 22.30; // número decimal podemos utilizar la connstante parseInt para pasarlo a número natural, página 60 manual
+let entero= 45; //número entero
 let negativo= -5;
 let PI = 3.24159;
 let miNumero = Number("1234"); // esto es igual a 1234
@@ -131,21 +132,51 @@ let onActive = false;
 
 //REFERENCIALES: hace referencia a un lugar (alumnosDeDW). El valor de una constante SI se puede modificar cuando hablamos de arrays y objetos. En una primitiva NO se puede modificar.
 
+//------------------------------------------
+
 //arrays: con corchetes
 const alumnosDeDW = ["Nerea", "David", "Jenny"];
 const edades = [25, 32, 18, 49];
-const listaMixta = [1, "Juan", true];
+const listaMixta = [1, "Juan", true {val1:"hola", val2:"chau"}];
+
+const listaDeCompras =["tomate", "lechuga"];
+//agregar a la lista "patata"
+listaDeCompras = ["tomate", "lechuga","patata"];
+
+//las listas empiezan con el indice 0 y se leen así
+console.log(listaDeCompras [0]); // tomate
+console.log(listaDeCompras [1]); // lechuga
+console.log(listaDeCompras [2]); // patata
+
+console.log(listaDeCompras [3]); // undefined
+console.log(listaDeCompras [-1]); // undefined
+
+//------------------------------------------
 
 // objetos: con llaves
 const alumno = { 
     nombre: "Mario", 
-    edad: 33, 
-    recibirse: function ()=> { 
+    edad: 33,
+    isRecibido: false, 
+    presentarProyecto: function ()=> { 
         isRrecibido=true;
         edad=34;
     },
-    }
+    };
+
+
+//lectura de una variable
+console.log(estaEncendida);
+let miNuevaVar= estaPrendida;
+
+//lectura de una propiedad
+console.log("La edad de mario es:", alumno.edad ); //imprime "La edad de Mario es: 33"
+
+//uso de un método
+alumno.presentarProyecto();
+console.log();
 ```
+
 
 ## Más tipos de datos
 
@@ -160,8 +191,8 @@ const alumno = {
 // otro tipos de datos
 let noDefinido; // undefined
 
-let valNula="texto"; // string
-valNula=null; // null
+let varNula="texto"; // string
+varNula=null; // null
     
 let noEsNumero=NaN; // not a number
 
@@ -172,3 +203,122 @@ let saludar = function () {
 } // esto es una función
 
 let hoy = new Date (); // en realidad es un objeto
+````
+
+Podemos siempre ver que tipo de dato es una variable utilizando el operaor `typeof``
+
+```js
+
+console.log(typeof NoDefinido); //undefined
+console.log(typeof varNula); //objetc
+console.log(typeof noEsNumero); //number
+console.log(typeof vacio); //string
+console.log(typeof saludar); //function
+console.log(typeof hoy); //object
+
+```
+
+## Consola (Chrome Developers Tool)
+
+La consola nos permite imprimir mensajes y depurar nuestro código. Podemos imrimir mensajes de diferentes tipos. También nos permite filtrar los mensajes según tipo.
+
+```javascript
+//mensajes informativo
+console.log("Este es un mensaje informativo");
+//mensajes de error
+console.error("Esto es un mensaje de error");
+//mensajes de advertencia
+console.warn("Este es un mensaje de ADVERTENCIA");
+//mensajes de información
+console.info("Este es un mensaje informativo");
+//mensajes de depiración (no verbose)
+console.debug("este es un mensaje informativo de depuración");
+//tabla de datos
+console.table(["Manzana", "Banana", "Cerezas"]);
+```
+
+## Operadores
+
+Son símbolos que nos permiten hacer operaciones en JS. Hay distintos tipos, por ejemplo, aritméticos, de asignación, de comparación, de lógica, etc.
+
+### Operaciones aritméticas
+
+Operaciones matemáticas:
+- Suma (+): suma de valores
+- Resta (-): resta de valores
+- Multiplicación (*): multiplica valores
+- Divisón (/): divide valores
+- Módulo (%): devuelve el resto de la división de dos valores
+- Incremento (++): incrementa en 1 el valor de la variable
+- Decremento (--): decrementa en 1 el valor de la variable
+
+```javascript
+let a = 10;
+let b = 5;
+
+let suma = a + b; //15
+let resta= a - b; //5
+let multiplicacion= a * b; //50
+let division = a / b; //2
+let modulo = a % b; //0
+let incremento =a++; //11
+let decremento=b--; //4
+
+modulo = resta = suma = incremento = b - 5; //0 ya que se lee de derecha a izquierda
+```
+
+Un ejemplo de módulo muy común es para saber si un número es par o impar, es decir, si el resto de la divisín de un número por 2 es igual 0.
+
+```js
+let numero=10;
+let esPar = (numero % 2 === 0) // es true. Con yres === estamos preguntando si el elemento de la derecha y el de la izquierda es igual
+let esImpar = (numero % 2 !== 0)// es false. Con !== preguntamos si el elemento de la derecha y el de la izquierda es diferente
+```
+
+## Operadores Comparativos
+
+Se utilizan para comparar dos valores en JS.
+
+- Igual `==`: compara si dos valores son iguales
+- Estrictamente igual `===`: compara si dos valores son iguales y del mismo tipo.
+- Dstinto `!=`: compara si dos valores son distintos
+- Distinto estricto `!==`: compara si dos valores son distintos
+- Mayor que `>`: compara si un valor es mayor a otro
+- Menor que `<`: compara si un valor es menor a otro
+- Mayor o igual que `>=`: compara si un valor es mayor o igual a otro
+- Menor o igual que `<=`: compara si un valor es mayor o igual a otro
+
+```js
+let a = 10;
+let b = "10";
+
+a == b; //true, 10 de número y "10" de texto son lo mismo
+a === b; //false, pero no son del mismo tipo, 10 es número y "10" es string
+
+let num1 = 10;
+let num2 = 5;
+
+let esIgual =             (num 1 == num2); //false
+let estrictamenteIgual =  (num1 === num2); //false
+let esDistinto =            (num1 != num2); //true
+let estrictamenteDistinto = (num1 !== num2) //true
+let esMayor =                (num1 > num2); //true
+let esMenor =              (num1 < num2); // false
+```
+
+## Funciones
+
+Es un bloque de código o algoritmo que realiza una operación específica. Puede recibir valores de entrada, y devolver un único resultado. 
+
+```js
+function Saludar (nombre,edad) { 
+    //entre las llaves introducimos el código que va a relizar mi función
+    console.log ("Hola a todos!, mi nombre es" + nombre);
+    console.log ("Mi edad es" + edad);
+
+}
+
+Saludar("Juan", 18);
+Saludar("Tomas", 20);
+Saludar("Maria", 29);
+```
