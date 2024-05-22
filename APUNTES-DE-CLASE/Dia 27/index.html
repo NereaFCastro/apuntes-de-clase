@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicios JS</h1>
+
+    <script>
+    
+    function ParImpar(numero){
+
+        let respuesta;
+
+        if(typeof numero % 2 == NaN){
+            return "Valor inválido";
+        }
+
+        if (numero % 2 === 0){
+            respuesta="El número "+numero+" es par";
+
+        } else {
+            respuesta="El número "+numero+" es impar";
+        }
+
+        return respuesta;
+
+    }
+
+    let msg;
+    msg=ParImpar(5);
+    console.log(msg); //El número 5 es impar 
+    
+// 2. Crear una functionque reciba un número y devuelva si es positivo, negativo o cero
+
+ 
+function PositivoNegativo(num){
+
+let respuesta= "error"; //de esta manera de inicio dará error a menos que se encuentre con una respuesta que coincida
+
+
+if (num > 0){
+    respuesta="El número "+num+" es positivo";
+}
+if (num < 0){
+    respuesta="El número "+num+" es impar";
+}
+if (num == 0){
+    respuesta="El número "+num+" es igual a 0";
+};
+
+return respuesta;}
+
+let mensaje;
+mensaje=PositivoNegativo(0)
+console.log(mensaje);
+
+// 4. Crear una fuction a la que si le indico el día de la semana, me devuelve si es laboral o no
+
+function NoLaboral (txtDia){
+    let respuesta="no se";
+
+    if (txtDia == "Sabado" || txtDia == "Domingo"){
+        respuesta = ""+txtDia+" no es laborable";
+
+}
+
+    if (txtDia == "Lunes" || txtDia == "Martes" || txtDia == "Miércoles" || txtDia == "Jueves" || txtDia == "Viernes"){
+        respuesta = ""+txtDia+" es laborable";
+};
+
+    return respuesta;}
+
+let mensa;
+mensa=NoLaboral("Jueves")
+console.log(mensa);
+
+
+
+</script>
+    
+</body>
+</html>

@@ -180,7 +180,7 @@ console.log();
 
 ## Más tipos de datos
 
-- Undefined: es un valor que se asigna a auna vzriable que no tiene valor (se declara pero no se le asignó un valor).
+- Undefined: es un valor que se asigna a auna variable que no tiene valor (se declara pero no se le asignó un valor).
 - Null: valor que se le asigna a una variable para indicar que no tiene valor intencionalmente. 
 - NaN (not a number): valor que obtenemos cuando se esperaba un número pero no lo es.
 - Empty (vacío): un string con valor vacío " 0 ".
@@ -267,7 +267,7 @@ let decremento=b--; //4
 modulo = resta = suma = incremento = b - 5; //0 ya que se lee de derecha a izquierda
 ```
 
-Un ejemplo de módulo muy común es para saber si un número es par o impar, es decir, si el resto de la divisín de un número por 2 es igual 0.
+Un ejemplo de módulo muy común es para saber si un número es par o impar, es decir, si el resto de la división de un número por 2 es igual 0. 
 
 ```js
 let numero=10;
@@ -277,7 +277,7 @@ let esImpar = (numero % 2 !== 0)// es false. Con !== preguntamos si el elemento 
 
 ## Operadores Comparativos
 
-Se utilizan para comparar dos valores en JS.
+Se utilizan para comparar dos valores en JS. Como se ve arriba,  la respuesta siempre es true o false.
 
 - Igual `==`: compara si dos valores son iguales
 - Estrictamente igual `===`: compara si dos valores son iguales y del mismo tipo.
@@ -305,20 +305,117 @@ let estrictamenteDistinto = (num1 !== num2) //true
 let esMayor =                (num1 > num2); //true
 let esMenor =              (num1 < num2); // false
 ```
+## Operadores lógico
 
-## Funciones
+Podemos verificar que múltiples operaciones sean verdaderas usando estos operadores:
 
-Es un bloque de código o algoritmo que realiza una operación específica. Puede recibir valores de entrada, y devolver un único resultado. 
+`&&` - se tienen que cumplir todas las comparaciones
+`||` - se tiene que cumplir al menos una de las comparaciones.
+`!`- Hace lo contrario de lo que es
 
 ```js
+if (edad > 21 && acepteTyC == true){
+    //registrar al usuario
+}
+
+if (diaSemana == "sabado" || diaSemana == "domingo"){
+    return "Es fin de semana";
+}
+
+if(num % 2 === 0){
+    //es par
+}
+
+if(num % 2 !==){ 
+    //es impar
+}
+
+
+```
+
+## Funciones <!-- a partir clase  27 -->
+
+Es un bloque de código o algoritmo que realiza una operación específica. Puede recibir valores de entrada (`parámetros`) y devolver un único resultado. Los valores que se pasan a la función cuando se invoca, se les llama `argumentos`.
+
+```js
+
+/**
+ * Función que saluda al usuario y le indica su nombre y edad. 
+ * @param {string} nombre - Nombre del usuario
+ * @param {number} edad - La edad del usuario
+ * 
+ * @return {void} - no devuelve nada
+ * 
+ * */
 function Saludar (nombre,edad) { 
-    //entre las llaves introducimos el código que va a relizar mi función
-    console.log ("Hola a todos!, mi nombre es" + nombre);
-    console.log ("Mi edad es" + edad);
+    let respuesta =  "Hola a todos!, mi nombre es" + nombre + "Mi edad es" + edad; //1. creo una variable
+
+    return respuesta; //2. devuelvo la variable
 
 }
 
-Saludar("Juan", 18);
-Saludar("Tomas", 20);
-Saludar("Maria", 29);
+let mensaje = Saludar("Juan", 18);
+console.log(mensaje);
+alert(mensaje);
+let mensaje = Saludar("Tomas", "20");
+let mensaje = Saludar("Maria", 29);
 ```
+
+## Condicionales
+
+Son estructuras de color que nos permite tomar decisiones. Si se cumple la condición, se ejectura un bloque de código, y si no se cumple, se ejecuta otro bloque de código.
+
+- El uso de "else" es opcional. 
+- Se puede añadir condicionales. 
+
+```js
+let numero = 7;
+
+/**
+ * Me indica si el módulo (resto de una división) de 2 de un número es igual es PAR o IMPAR.
+ */
+
+if (numero % 2 === 0){
+    console.log("El número es PAR");
+
+} 
+
+else {
+    console.log("El número es IMPAR");
+}
+
+let edad = 16;
+//me indica si es mayor de edad
+if (edad >= 21){
+    console.log ("Es mayor de edad");
+} else {
+    console.log("Es mejor de edad");
+    }
+```
+
+## Uso de Bucles
+
+Los bucles permiten repetir un código varias veves. En JS tenemos tres tipos de bucles:
+
+-`for`: se utiliza cuando sabemos cuantas veces queremos que se repita.
+-`while`:
+-`do-while`:
+
+```js
+//for (inicializador; condicion; incremento)
+for (let i¡contador=0; < 10; contador++){
+    //me voy a repetir muchas veces!
+    console.log("Hola alumnos!" + contador);
+}
+
+
+```
+
+<!-- ### Ejercicio
+
+1. Crear una `function`que reciba un número y devuelva si es par o impar.
+2. Crear una functionque reciba un número y devuelva si es positivo, negativo o cero
+3. Crear una functon que me indique si es mayor o menor de edad.
+4. Crear una fuction a la que si le indico el día de la semana, me devuelve si es laboral o no.
+5. Crear una fuction donde sus parámetros sean jugador1 y jugador2 y devuelva si el jugador2 le gana a jugador2 en un juego de pieda papel o tijera.
+6. Modificar la calculadora del día 25 para que podamos sumar, restar, multiplicar o dividir dos valores utilizando funciones.  -->
