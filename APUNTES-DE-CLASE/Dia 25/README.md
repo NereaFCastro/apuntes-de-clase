@@ -337,6 +337,8 @@ if(num % 2 !==){
 
 Es un bloque de código o algoritmo que realiza una operación específica. Puede recibir valores de entrada (`parámetros`) y devolver un único resultado. Los valores que se pasan a la función cuando se invoca, se les llama `argumentos`.
 
+Tenemos la opción de inicializar un parámentro con un valor y estos se deben de situar al final de la lista.
+
 ```js
 
 /**
@@ -347,14 +349,14 @@ Es un bloque de código o algoritmo que realiza una operación específica. Pued
  * @return {void} - no devuelve nada
  * 
  * */
-function Saludar (nombre,edad) { 
+function Saludar (nombre,edad, género = "no indicado") { 
     let respuesta =  "Hola a todos!, mi nombre es" + nombre + "Mi edad es" + edad; //1. creo una variable
 
     return respuesta; //2. devuelvo la variable
 
 }
 
-let mensaje = Saludar("Juan", 18);
+let mensaje = Saludar("Juan", 18, "masculino");
 console.log(mensaje);
 alert(mensaje);
 let mensaje = Saludar("Tomas", "20");
@@ -397,17 +399,42 @@ if (edad >= 21){
 
 Los bucles permiten repetir un código varias veves. En JS tenemos tres tipos de bucles:
 
--`for`: se utiliza cuando sabemos cuantas veces queremos que se repita.
--`while`:
--`do-while`:
+-`for`: se utiliza cuando sabemos cuantas veces queremos que se repita. Es el más utilizado.
+-`while`: se utiliza cuando no sabemos cuanta veces se va a repetir el bloque de código
+-`do-while`: es ifual al "while" pero se ejecuta al menos una vez
 
 ```js
+// BUCLE FOR
 //for (inicializador; condicion; incremento)
-for (let i¡contador=0; < 10; contador++){
+for (let contador=0; contador < 10; contador++){
     //me voy a repetir muchas veces!
     console.log("Hola alumnos!" + contador);
 }
 
+// BUCLE WHILE
+    let i=0;
+    while (i < 10){
+        console.log("Hola alumnos");
+        i++;
+    }
+
+    let salir=false;
+    // while (salir == false) es lo mismo
+
+        
+    while (!salir){
+        console.log ("me quedo jugando...");
+
+        salir=true
+        
+    }
+
+    // BUCLE DO-WHILE
+    lei i=0;
+    do{
+        console.log("Hola alumnos");
+
+    } while (i < 5);
 
 ```
 

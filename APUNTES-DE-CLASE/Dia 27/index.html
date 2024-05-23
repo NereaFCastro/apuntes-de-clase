@@ -77,7 +77,53 @@ let mensa;
 mensa=NoLaboral("Jueves")
 console.log(mensa);
 
+// 5. Crear una fuction donde sus parámetros sean jugador1 y jugador2 y devuelva si el jugador2 le gana a jugador2 en un juego de pieda papel o tijera.
 
+function PiedraPapelTijeras(jugador1, jugador2){
+            let resultado="Datos Invalidos";
+
+                if(jugador1 == jugador2){
+                    resultado= "empate";
+                }else if(jugador1 == "piedra"){
+                   if(jugador2 == "papel"){
+                    resultado = "gana jugador 2";
+                   }else{
+                    resultado = "gana jugador 1";
+                   }
+                }else if(jugador1 == "papel"){
+                    if(jugador2 == "tijeras"){
+                            resultado = "gana jugador 2";
+                    }else{
+                        resultado = "gana jugador 1";
+                    }
+                }else if(jugador1 == "tijeras"){
+                    if(jugador2 == "piedra"){
+                            resultado = "gana jugador 2";
+                    }else{
+                        resultado = "gana jugador 1";
+                    }
+                
+
+            //operación ternaria otra forma más simple de comprobación en vez del if de arriba
+            // pregunta ? se cumple: no se cumple
+            resultado = (jugador2 == "piedra") ? "gana Jugador 2" : "gana Jugador 1";
+
+            /*Normalmente se escribe así
+            resultado = (jugador2 == "piedra") ? "gana Jugador 2" 
+                                               : "gana Jugador 1";
+            TERMINAR 1:10
+            */
+             }else{
+                resultado="Datos Invalidos";
+            }//Esto nos permite tener un solo resultado
+
+            return resultado;
+
+        }
+
+PiedraPapelTijeras("piedra", "papel");
+PiedraPapelTijeras("tijera", "tijera"); 
+        PiedraPapelTijeras("papel", "tijera");
 
 </script>
     
