@@ -1,6 +1,6 @@
 ## Math
 
-El obketo `math`nos proporciona propiedades y métodos para realizar operaciones. Los más comunes son:
+El objeto `math`nos proporciona propiedades y métodos para realizar operaciones. Los más comunes son:
 
 - Math.random(): devuelve un número pseudoaleatorio entre 0 y 1. 
 - Math.round (): devuelve el valor de un número redondeado al número entero más cercano. 

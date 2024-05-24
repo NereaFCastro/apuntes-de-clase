@@ -59,7 +59,7 @@ let alumnos = {
 
 ## Variables
 
-> Son como cajas que utilizamos para guardar información. Esta información puede ser un número, texto, una lista de cosas, y muchos otros tipos más. Nos permiten almacenar datos y luego usarlos o modificarlos en diferentes partes de nuestro programa.
+> Son como cajas que utilizamos para guardar información. Esta información puede ser un número, texto, una de cosas, y muchos otros tipos más. Nos permiten almacenar datos y luego usarlos o modificarlos en diferentes partes de nuestro programa.
 > Definir una variable: es como darle un nombre a esta caja con un rotulador para poder encontrarla más adelante. 
 > Un vez que definimos una variable vamos asigarle un valor, es decir, poner cosas dentro de la caja (número, texto, lista...)
 > Después podremos usar la variable: abrir la caja y ver que hay dentro. También podemos modificarlas, de ahí que sean variables.
