@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra-papel-tijera</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h1>Piedra Papel Tijera</h1>
+
+
+<button onClick="jugar('piedra')">Piedra 🤜🏼</button>
+<button onClick="jugar('papel')">Papel 🫱🏼</button>
+<button onClick="jugar('tijera')">Tijera ✌🏼</button>
+
+<div class="txtResultado"></div>
+
+<hr>
+<p>Ganadas: <span id="ganadas">0</span></p>
+<p>Perdidas: <span id="perdidas">0</span></p>
+<p>Empatadas: <span id="empatadas">0</span></p>
+
+
+<hr>
+
+Stats
+<div class="txtEstadisticas"></div>
+
+<hr>
+
+
+Grafica
+    <div class="progressBar">
+        <div class="progressBar-item u-bgRed">Ganadas</div>
+        <div class="progressBar-item u-bgBlue">Perdidas</div>
+    </div>
+
+
+
+
+
+    <script src="./js/scripts.js"></script>
+</body>
+</html>

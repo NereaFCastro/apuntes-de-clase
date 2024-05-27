@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de objeto</title>
+
+    <style>
+        .flexContainer{
+            display: flex;
+
+        }
+
+        .miCaja{
+            width: 100px;
+            height: 100px;
+            background-color: beige;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo objeto</h1>
+    <div class="flexContainer">
+        <div class="miCaja" id="miCaja1"></div>
+        <div class="miCaja" id="miCaja2"></div>
+    </div>
+    <script>
+
+        //VARIABLE GLOBAL (EN TODO EL CÓDIGO)
+        let nombre ="Tom";
+
+        function MiNombre (){
+            //VARIBLE LOCAL: SOLO FUNCIONAN EN EL OBJETO O FUNCIONES
+            let apellida= "SG";
+
+            if (miNombre=="Tom"){
+                //VARIABLE DE BLOQUE (FOR-WHILES-IF-DOWHILE)
+                let saludar=true;
+            }
+                }
+
+    </script>
+    <script>
+        // Parte 1: generar variables
+        const myDiv1 = document.getElementById("miCaja1");
+        const myDiv2 = document.getElementById("miCaja2");
+        const container = document.querySelector(".flexContainer");
+
+        //parte 2: crear funciones
+        const divChanger = {
+        objetoCambiar: null,
+
+        cambiarAncho: function (ancho) {
+            this.objetoACambiar.style.width = ancho;
+        },
+        cambiarAlto: function (alto) {
+            this.objetoACambiar.style.height = alto;
+        },
+        cambiarAnchoYAlto: function (medida) {
+            this.objetoACambiar.style.height = medida;
+            this.objetoACambiar.style.width = medida;
+        },
+        cambiarFondo: function (url){
+            this.objetoACambiar.style.backgroundImage = `url(${url})`;
+            this.objetoACambiar.style.backgroundSize = "cover";
+            this.objetoCambiar.style.backgroundPosition = "center";
+        }
+    }
+   
+
+
+        // cambiar propiedades caja 1   
+        divChanger.objetoACambiar = myDiv1;
+        divChanger.cambiarAncho("200px");
+
+        // cambiar propiedades caja 2
+        divChanger.objetoACambiar = myDiv2;
+        divChanger.cambiarAnchoYAlto("300px");
+        divChanger.cambiarFondo("https://media.ambito.com/p/f3968a5dcd0696fa22078c09d588b308/adjuntos/239/imagenes/040/768/0040768786/astronautajpg.jpg")
+
+
+        // Parte 3: ejecutar código
+        myDiv1.style.border = "1px solid black";
+        myDiv1.innerText = "Contenido de Caka 1 modificaod";
+    </script>
+
+    
+</body>
+</html>
