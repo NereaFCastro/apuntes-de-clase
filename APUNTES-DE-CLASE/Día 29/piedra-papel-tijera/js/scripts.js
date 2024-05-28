@@ -56,19 +56,19 @@ function jugar(jugador){
     }else if(jugador == "papel"){
         resultado= (jugadorIA =="tijera") ? "Perdiste" : "Ganaste";
 
-    }else if(jugador == "tijeras"){
+    }else if(jugador == "tijera"){
         resultado= (jugadorIA =="piedra") ? "Perdiste" : "Ganaste";
 
     }
 
     //actualiza las estadisticas de IA (Cuantas veces tiro piedra papel y tijeras)
     if(jugadorIA == "piedra"){objPuntaje.stats.ai_piedra++;}
-    if(jugadorIA == "piedra"){objPuntaje.stats.ai_papel++;}
-    if(jugadorIA == "piedra"){objPuntaje.stats.ai_tijera++;}
+    if(jugadorIA == "papel"){objPuntaje.stats.ai_papel++;}
+    if(jugadorIA == "tijera"){objPuntaje.stats.ai_tijera++;}
     //actualiza las estadisticas de Jugador (Cuantas veces tiro piedra papel y tijeras)
     if(jugador == "piedra"){objPuntaje.stats.user_piedra++;}
-    if(jugador == "piedra"){objPuntaje.stats.user_papel++;}
-    if(jugador == "piedra"){objPuntaje.stats.user_tijera++;}
+    if(jugador == "papel"){objPuntaje.stats.user_papel++;}
+    if(jugador == "tijera"){objPuntaje.stats.user_tijera++;}
 
     //actualizar las partidas
     if(resultado=="Perdiste"){
@@ -98,11 +98,33 @@ function elegirAutomaticamente(){
     // return "string"; // piedra, papel, tijera
 }
 
+//Variable global de intervalo
+let intervaloAI;
+
+function AIvsAI(){
+
+    //intervalo para ejecutar algo muchas veces (1 segundoa igual a 1000milisegundos)
+    // setInterval("una función","cada cuando lo voy a hacer");
+    intervaloAI = setInterval( ()=>{const JugadorAI2=elegirAutomaticamente();
+
+        jugar(JugadorAI2);}, 1000);
+
+    
+    
+
+}
 
 function mostrarEstadisticas (){
     txtGanadas.innerText = objPuntaje.ganadas;
     txtPerdidas.innerText = objPuntaje.perdidas;
     txtEmpatadas.innerText = objPuntaje.empatadas;
+
+    txtEstadisticas.innerHTML= `<div>
+    <h1>Stats AI:
+    🤜🏼x ${objPuntaje.stats.ai_piedra} 🫱🏼x ${objPuntaje.stats.ai_papel} ✌🏼x ${objPuntaje.stats.ai_tijera}</h1>
+    <h1>Stats usuario: 
+    🤜🏼x ${objPuntaje.user_piedra} 🫱🏼x ${objPuntaje.stats.user_papel} ✌🏼x ${objPuntaje.stats.user_tijera}</h1>
+    </div>`;
 
     // graficas barra
 
@@ -123,19 +145,28 @@ function graficarBarra(){
 
 }
 function resetStats(){
+ 
+//borro intervalo de AI en caso de haberlo uniciao
+    clearInterval (intervaloAI);
+
     objPuntaje.ganadas = 0;
     objPuntaje.perdidas = 0;
     objPuntaje.empatadas = 0;
     objPuntaje.stats.ai_piedra = 0;
     objPuntaje.stats.ai_papel = 0;
-    objPuntaje.stats.ai_papel = 0;
+    objPuntaje.stats.ai_tijera = 0;
     objPuntaje.stats.user_piedra = 0;
     objPuntaje.stats.user_papel = 0;
-    objPuntaje.stats.user_papel = 0;
+    objPuntaje.stats.user_tijera = 0;
+
+
+    // re-imprimir la pantalla
+    mostrarEstadisticas ();
+
 }
 
 
 
-//3. EJECUTAMOS FUNCIONES
+//3. EJECUTAMOS NUESTRO CÓDIGO
 
 resetStats();

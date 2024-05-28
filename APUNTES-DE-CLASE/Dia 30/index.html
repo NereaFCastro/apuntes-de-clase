@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // AÑADIR CON .POP
+        // const alumnos = ["Juan", "Pedro", "Maria", "Lucas", "Cecilia", "Caro"];
+        // const ultimoAlumno = alumnos.pop();
+        // console.log(ultimoAlumno);
+        // console.log("Lista actualoza de alumnos;", alumnos);
+
+        //AÑADIR ELEMENTOS CON .PUSH
+        // const alumnos = ["Juan", "Pedro", "Maria", "Lucas", "Cecilia", "Caro"];
+        // const añadirAlumno = alumnos.push("Mario", "Jose");
+        // console.log(añadirAlumno);
+        // console.log("Lista actualoza de alumnos;", alumnos);
+
+        // El método shift() elimina el primer elemento del array y lo retorna. Este método modifica la longitud del array.
+        // const alumnos = ["Juan", "Pedro", "Maria", "Lucas", "Cecilia", "Caro"];
+        // const quitarAlumno = alumnos.shift();
+        // console.log(quitarAlumno);
+        // console.log("El alumno eliminado es", alumnos);
+
+        // Por otro lado, el método unshift() añade uno o más elementos al inicio del array, y devuelve la nueva longitud del array.
+        // const alumnos = ["Juan", "Pedro", "Maria", "Lucas", "Cecilia", "Caro"];
+        // const nuevaLongitud = alumnos.unshift("Mario", "Jose");
+        // console.log(nuevaLongitud);
+        // console.log("Lista actualizada de alumnos;", alumnos);
+
+        // El método splice() cambia el contenido de un array eliminando, creando o reemplazando elementos del vector. Modifica el vector original. Recibe 3 parámetros:
+        const alumnos = ["Juan", "Pedro", "Maria", "Lucas", "Cecilia", "Caro"];
+        const nuevaLista = alumnos.splice(2, 2, "Mario", "Jose");
+        console.log(nuevaLista);
+        console.log("Lista actualizada de alumnos;", alumnos);
+
+    </script>
+    
+</body>
+</html>
