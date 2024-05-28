@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carrito</title>
+</head>
+<body>
+    <div>
+        <h1>Café</h1>
+        <button onClick="sumarItem(1)">Agragar 1 al carrito</button>
+        <button onClick="sumarItem(2)">Agregar 2 al carrito</button>
+        <button onClick="sumarItem(3)">Agregar 3 al carrito</button>
+    </div>
+    <div>
+        <h1>Bocadillo</h1>
+        <button onClick="sumarItem(1)">Agragar 1 al carrito</button>
+        <button onClick="sumarItem(2)">Agregar 2 al carrito</button>
+        <button onClick="sumarItem(3)">Agregar 3 al carrito</button>
+    </div>
+    <div>
+        <h1>Bebida</h1>
+        <button onClick="sumarItem(1)">Agragar 1 al carrito</button>
+        <button onClick="sumarItem(2)">Agregar 2 al carrito</button>
+        <button onClick="sumarItem(3)">Agregar 3 al carrito</button>
+    </div>
+
+    <div style="border-top: 1px solid black; margin: 10px; padding: 10px">
+    <!-- <button onClick="verTotal()">Cesta de compra</button> -->
+    <button onClick="borrarCarrito()">Vaciar carrito</button>
+    </div>
+
+    <div id="informacion">Total</div>
+    
+    <script>
+        let cantidad=0;
+        const txtInfo=document.getElementById("informacion");
+
+       function sumarItem(num){
+        cantidad= cantidad + num;
+        verTotal();
+       }
+        
+
+
+        function borrarCarrito(){
+            cantidad = 0;
+            verTotal();
+
+        }
+
+        function verTotal(){
+            const mensaje=`Has añadido ${cantidad} de items`;
+            console.log(mensaje);
+            txtInfo.innerHTML = mensaje;
+
+        }
+
+    </script>
+</body>
+</html>

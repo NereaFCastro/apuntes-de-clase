@@ -32,10 +32,80 @@
         // console.log("Lista actualizada de alumnos;", alumnos);
 
         // El método splice() cambia el contenido de un array eliminando, creando o reemplazando elementos del vector. Modifica el vector original. Recibe 3 parámetros:
+
+        // const alumnos = ["Juan", "Pedro", "Maria", "Lucas", "Cecilia", "Caro"];
+        // const nuevaLista = alumnos.splice(2, 2, "Mario", "Jose");
+        // console.log(nuevaLista);
+        // console.log("Lista actualizada de alumnos;", alumnos);
+
+        //----------------------------------------------------------------//
+        //                 LO QUE HIZO EL PROFE                           //
+        //----------------------------------------------------------------//
+
         const alumnos = ["Juan", "Pedro", "Maria", "Lucas", "Cecilia", "Caro"];
-        const nuevaLista = alumnos.splice(2, 2, "Mario", "Jose");
-        console.log(nuevaLista);
-        console.log("Lista actualizada de alumnos;", alumnos);
+        console.log(alumnos);
+
+        //quitamos el último alumno de la lista
+        const ultimoAlumno = alumnos.pop();
+        console.log(ultimoAlumno);
+        console.log("POP: Lista actualizada de alumnos;", alumnos);
+
+        // elimina el último elemento
+        alumnos.pop();
+        console.log("POP: Lista actualizada de alumnos;", alumnos);
+        
+        //agrega X elementos al final
+        alumnos.push("Alexander", "Jenny");
+        console.log("PUSH: Lista actualizada de alumnos;", alumnos);
+
+        //elimina el primer elemtno
+        alumnos.shift();
+        console.log("SHFT: Lista actualizada de alumnos;", alumnos);
+
+        //agrega X elemtnos al inicio
+        alumnos.unshift("Paula", "Eva");
+        console.log("UNSHFT: Lista actualizada de alumnos;", alumnos);
+
+        alumnos.splice(2, 2, "Nerea");
+        console.log("SPLICE: Lista actualizada de alumnos;", alumnos);
+
+        alumnos.splice(3, 1, "David", "Karo", "Jhoan", "Sara", "Juliana", "Alba", "Ruben");
+        console.log("SPLICE: Lista actualizada de alumnos;", alumnos);
+
+        alumnos.reverse();
+        console.log("Reverse", alumnos);
+
+        const letras = ["a", "b", "c", "d"];
+
+        letras.forEach (function(letra){
+            console.log("bucle 1:", letra);
+        });
+
+        letras.forEach(letra => {
+            console.log("bucle 2:", letra);
+        });
+
+        // Si necesito el índice, lo puedo recibir como 2ndo parámetro
+        // El forEach no retorna el array actualizado
+        letras.forEach ((letra, i) =>{
+            // console.log("bucle 3:", letra, i);
+            console.log("Letra es: ", letra);
+            letra = letra.toUpperCase(); // a => A ; NO FUNCIONÓ como esperaba
+
+            // como no devuelve automáticamente el item actualizado, lo actualizo uno por uno usando el índice
+            letras[i] = letra.toUpperCase(); // a => A ; SI FUNCIONÓ
+
+            console.log("Letra May: ", letra);
+
+         });
+         console.log("TODAS LAS LETRAS", letras);
+
+         const Numeros = [5,3,25, 12];
+// La diferecnai entre .forEach y .map es que map si nos devuelve valores
+         const ListaActualizada = Numeros.map (function (numero){
+            return numero +1; // = 6, 4, 26, 13
+         })
+      
 
     </script>
     
