@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <div class="calculadora">
+   
+    <div>
+    <input type="number" id="num1">
+
+    <input type="number" id="num2">
+    </div>
+
+    <button class="btnSumar">+</button>
+    <button class="btnResta">-</button>
+    <button class="btnDivi">/</button>
+    <button class="btnMulti">*</button>
+
+    <h3>Resultado</h3>
+    <div id="divResultado"></div>
+    </div>
+
+    <script>
+        //1. Definimos variables
+        const input1 = document.querySelector("#num1");
+        const input2 = document.querySelector("#num2");
+        const divResultado = document.querySelector("#divResultado");
+
+
+        let valor1=0;
+        let valor2=0;
+
+        let resultado=0;
+        
+        //2. Definimos funciones
+
+        const btnSumar = document.querySelector("#btnSumar");
+
+        const btnResta = document.querySelector("#btnResta");
+
+        btnSumar.addEventListener("click", () => {
+            obtenerValores();
+            resultado= valor1 + valor2;
+            imprimirResultado();
+
+
+        });
+
+        btnResta.addEventListener("click", () =>{
+            obtenerValores();
+            resultado= valor1 - valor2;
+            imprimirResultado();
+
+
+        });
+
+        function obtenerValores(){
+            valor1 = parseFloat (input1.value);
+            valor2 = parseFloat (input2.value);
+
+            input.value
+        } 
+
+        function imprimirResultado(){
+        divResultado.innerHTML=resultado;
+        }
+       
+        // --- OTRA OPCIÓN ---
+        // function calcular (){
+        //     const valor1= document.querySelector("#num1").value;
+        // }
+
+
+        //3. Ejecutamos nuestro código
+        obtenerValores();
+    </script>
+</body>
+</html>

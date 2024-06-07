@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(239, 202, 208);
+        }
+        .calculadora {
+            background-color: rgb(232, 232, 191);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        .botones {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        .boton {
+            padding: 20px;
+            font-size: 1.5em;
+            background-color: rgb(59, 118, 114);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .boton.operacion {
+            background-color: #52c46d;
+        }
+        .boton.clear {
+            background-color: #c97e85;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculadora">
+        <input type="text" class="input" id="resultado" readonly>
+        <div class="botones">
+            <button class="boton" onclick="appendNumber('7')">7</button>
+            <button class="boton" onclick="appendNumber('8')">8</button>
+            <button class="boton" onclick="appendNumber('9')">9</button>
+            <button class="boton operacion" onclick="chooseOperation('/')">/</button>
+            <button class="boton" onclick="appendNumber('4')">4</button>
+            <button class="boton" onclick="appendNumber('5')">5</button>
+            <button class="boton" onclick="appendNumber('6')">6</button>
+            <button class="boton operacion" onclick="chooseOperation('*')">*</button>
+            <button class="boton" onclick="appendNumber('1')">1</button>
+            <button class="boton" onclick="appendNumber('2')">2</button>
+            <button class="boton" onclick="appendNumber('3')">3</button>
+            <button class="boton operacion" onclick="chooseOperation('-')">-</button>
+            <button class="boton" onclick="appendNumber('0')">0</button>
+            <button class="boton" onclick="appendNumber('.')">.</button>
+            <button class="boton" onclick="compute()">=</button>
+            <button class="boton operacion" onclick="chooseOperation('+')">+</button>
+            <button class="boton clear" onclick="clearAll()">C</button>
+        </div>
+    </div>
+
+    <script>
+        let currentOperand = '';
+let previousOperand = '';
+let operation = undefined;
+
+const resultadoElement = document.getElementById('resultado');
+
+function appendNumber(number) {
+    if (number === '.' && currentOperand.includes('.')) return;
+    currentOperand = currentOperand.toString() + number.toString();
+    updateDisplay();
+}
+
+function chooseOperation(op) {
+    if (currentOperand === '') return;
+    if (previousOperand !== '') {
+        compute();
+    }
+    operation = op;
+    previousOperand = currentOperand;
+    currentOperand = '';
+}
+
+function compute() {
+    let computation;
+    const prev = parseFloat(previousOperand);
+    const current = parseFloat(currentOperand);
+    if (isNaN(prev) || isNaN(current)) return;
+    switch (operation) {
+        case '+':
+            computation = prev + current;
+            break;
+        case '-':
+            computation = prev - current;
+            break;
+        case '*':
+            computation = prev * current;
+            break;
+        case '/':
+            computation = prev / current;
+            break;
+        default:
+            return;
+    }
+    currentOperand = computation;
+    operation = undefined;
+    previousOperand = '';
+    updateDisplay();
+}
+
+function clearAll() {
+    currentOperand = '';
+    previousOperand = '';
+    operation = undefined;
+    updateDisplay();
+}
+
+function updateDisplay() {
+    resultadoElement.value = currentOperand;
+}
+
+// Initial display update
+updateDisplay();
+    </script>
+</body>
+</html>
