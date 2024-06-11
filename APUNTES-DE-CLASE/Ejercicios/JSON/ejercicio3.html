@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <style>
+        img{
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedor"></div>
+    <div id="peliculas"></div>
+
+    <script>
+   const dataPeliculas = `[
+  {
+    "titulo": "Inception",
+    "genero": "Ciencia Ficción",
+    "puntaje": 8.8,
+    "descripcion": "Un ladrón que roba secretos corporativos a través del uso de tecnología de sueños es dado la tarea inversa de plantar una idea en la mente de un CEO.",
+    "imagen": "https://pics.filmaffinity.com/Origen-652954101-large.jpg"
+  },
+  {
+    "titulo": "The Dark Knight",
+    "genero": "Acción",
+    "puntaje": 9.0,
+    "descripcion": "Cuando el Joker emerge como el nuevo villano del caos, Batman debe aceptar uno de los mayores desafíos psicológicos y físicos para combatir la injusticia.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/en/1/1c/The_Dark_Knight_%282008_film%29.jpg"
+  },
+  {
+    "titulo": "Interstellar",
+    "genero": "Aventura",
+    "puntaje": 8.6,
+    "descripcion": "Un equipo de exploradores viaja a través de un agujero de gusano en el espacio en un intento de asegurar la supervivencia de la humanidad.",
+    "imagen": "https://es.web.img3.acsta.net/pictures/14/10/02/11/07/341344.jpg"
+  }
+]`;
+
+const listaPeliculas = JSON.parse(dataPeliculas);
+
+const divContenedor = document.querySelector("#contenedor");
+const divPeliculas = document.querySelector("#peliculas");
+
+
+listaPeliculas.forEach(peliculas => {
+    divContenedor.innerHTML += `<div class="peli">
+                                    <h3>${peliculas.titulo}</h3>
+                                    <img src="${peliculas.imagen}">
+                                </div>`;
+
+   
+
+});
+
+const pelis = document.querySelectorAll(".peli");
+
+    pelis.forEach(peli => {
+
+        peli.addEventListener('click', ( event ) => {
+            const divPeliculas = event.target;
+            alert ("olaaaa")
+            // divPeliculas.innerHTML += `<div class="peliula">
+            //                         <h3>${peli.genero}</h3>
+            //                          <h3>${peli.puntaje}</h3>
+            //                          <h3>${peli.descripcion}</h3>
+            //                     </div>`;
+               
+    }); 
+})
+
+
+    </script>
+    
+</body>
+</html>
