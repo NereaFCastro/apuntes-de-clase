@@ -5,14 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 3</title>
     <style>
-        img{
-            width: 30%;
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+
+        .contenedor img{
+            max-width: 200px;
+        }
+
+        img {
+            width: 300px;
+        }
+
+        .peliculas{
+            background-color: lightcoral;
+            min-width: 200px;
+            padding: 20px;
+
+        }
+
+        .contenedor{
+            flex-grow: 1;
+            background: #ccc;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .peliCard{
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+
+        }
+
+        
+
+        .main{
+            display: flex;
+        }
+
+        ul , p{
+            margin: 20px;
+        }
+
     </style>
 </head>
 <body>
-    <div id="contenedor"></div>
-    <div id="peliculas"></div>
+    <main class="main">
+    <div class="contenedor"></div>
+    <div class="peliculas">
+       Seleccione una película
+    </div>
+</main>
 
     <script>
    const dataPeliculas = `[
@@ -41,12 +90,14 @@
 
 const listaPeliculas = JSON.parse(dataPeliculas);
 
-const divContenedor = document.querySelector("#contenedor");
-const divPeliculas = document.querySelector("#peliculas");
+const divContenedor = document.querySelector(".contenedor");
+const divPeliculas = document.querySelector(".peliculas");
 
 
-listaPeliculas.forEach(peliculas => {
-    divContenedor.innerHTML += `<div class="peli">
+listaPeliculas.forEach ((peliculas, indice) => {
+    console.log(peliculas.titulo);
+    console.log(indice);
+    divContenedor.innerHTML += `<div class="peliCard" onClick="seleccionarPelicula(${indice})">
                                     <h3>${peliculas.titulo}</h3>
                                     <img src="${peliculas.imagen}">
                                 </div>`;
@@ -55,21 +106,31 @@ listaPeliculas.forEach(peliculas => {
 
 });
 
-const pelis = document.querySelectorAll(".peli");
+function seleccionarPelicula(indice){
+    console.log(listaPeliculas[indice]);
+    const peliculas = listaPeliculas[indice];
 
-    pelis.forEach(peli => {
+    divPeliculas.innerHTML=`<h3>${peliculas.titulo}</h3> 
+                            <ul>
+                                <li>${peliculas.genero}</li>
+                                <li>${peliculas.puntaje}</li>
+                            </ul>
+        <p>${peliculas.descripcion}</p>
+        <img src="${peliculas.imagen}">`
 
-        peli.addEventListener('click', ( event ) => {
-            const divPeliculas = event.target;
-            alert ("olaaaa")
-            // divPeliculas.innerHTML += `<div class="peliula">
-            //                         <h3>${peli.genero}</h3>
-            //                          <h3>${peli.puntaje}</h3>
-            //                          <h3>${peli.descripcion}</h3>
-            //                     </div>`;
-               
-    }); 
-})
+}
+
+// const pelis = document.querySelectorAll(".peliCard");
+
+//     pelis.forEach(peli => {
+
+//         peli.addEventListener('click', ( event ) => {
+//             // const divPeliculas = event.target;
+//             //usar .closest () para encontrar .peli más cercano incluso cuando hago click en un hijo del elemento.
+//         const divPelicula = event.target.closest(".peliCard");
+//         console.log(divPelicula);
+//     }); 
+// })
 
 
     </script>
