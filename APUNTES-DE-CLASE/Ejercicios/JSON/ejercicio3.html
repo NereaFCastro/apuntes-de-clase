@@ -97,23 +97,34 @@ const divPeliculas = document.querySelector(".peliculas");
 listaPeliculas.forEach ((peliculas, indice) => {
     console.log(peliculas.titulo);
     console.log(indice);
-    divContenedor.innerHTML += `<div class="peliCard" onClick="seleccionarPelicula(${indice})">
-                                    <h3>${peliculas.titulo}</h3>
-                                    <img src="${peliculas.imagen}">
-                                </div>`;
+    //Versión 1: Crear div utilizando Template Strings
+    // divContenedor.innerHTML += `<div class="peliCard" onClick="seleccionarPelicula(${indice})">
+    //                                 <h3>${peliculas.titulo}</h3>
+    //                                 <img src="${peliculas.imagen}">
+    //                             </div>`;
 
-   
+    //Versión 2: crear div utilizando createEelement()
+    const peliculaDiv = document.createElement (`div`);
+    peliculaDiv.classList.add("peliCard");
 
-});
+    peliculaDiv.innerHTML= `<h3>${peliculas.titulo}</h3>
+    <img src="${peliculas.imagen}" />`;
+
+    divContenedor.appendChild(peliculaDiv); //crea 3 div ya que recore la lista películas que tiene 3 elementos
+
+    peliculaDiv.addEventListener("click", () =>{
+        seleccionarPelicula(indice);
+    });
+
+}); //fin de la lista .foEach
 
 function seleccionarPelicula(indice){
-    console.log(listaPeliculas[indice]);
     const peliculas = listaPeliculas[indice];
 
     divPeliculas.innerHTML=`<h3>${peliculas.titulo}</h3> 
                             <ul>
-                                <li>${peliculas.genero}</li>
-                                <li>${peliculas.puntaje}</li>
+                                <li><b>${peliculas.genero}</b></li>
+                                <li>Puntuación: <b>${peliculas.puntaje}</b></li>
                             </ul>
         <p>${peliculas.descripcion}</p>
         <img src="${peliculas.imagen}">`
