@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .tabs-contenido{
+            display: none;
+        
+        }
+
+        .u-visible{
+            display: block;
+        }
+
+        .tabs-buttons{
+            display: flex;
+            cursor: pointer;
+        }
+
+        .tabs-button {
+            padding: 10px;
+            background: #ddd;
+            border: 1px solid #ccc;
+
+        }
+
+        .button-active{
+            background: #fff;
+            border: 1px solid salmon;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <div class="tabs-buttons">
+            <div data-tab="pagina1" class="tabs-button button-active">Tab 1</div>
+            <div data-tab="pagina2" class="tabs-button">Tab 2</div>
+            <div data-tab="pagina3" class="tabs-button">Tab 3</div>
+        </div>
+
+        <div id="pagina1" class="tabs-contenido u-visible">
+            <h2>Página 1</h2>
+            <p>Contenido página 1</p>
+        </div>
+        <div id="pagina2" class="tabs-contenido">
+            <h2>Página 2</h2>
+            <p>Contenido página 3</p>
+        </div>
+        <div id="pagina3" class="tabs-contenido">
+            <h2>Página 3</h2>
+            <p>Contenido página 3</p>
+        </div>
+
+    </div>
+    <script>
+        const listaBotones = document.querySelectorAll(".tabs-button");
+        const listaContenidos = document.querySelectorAll(".tabs-contenido"); 
+
+        listaBotones.forEach(boton =>{
+            boton.addEventListener("click", ()=>{
+                // permite leer cualquer cualidad. Con setAttribute podemos guardar
+                // const id=boton.getAttribute("data-tab");
+                
+
+                // boton.setAttribute("caja", "importante");
+                const id = boton.dataset.tab;
+                const target = document.getElementById(id);
+
+                //quito la clase u-visible de todos
+                listaContenidos.forEach(pagina => {
+                    pagina.classList.remove("u-visible");
+                });
+
+                listaBotones.forEach(boton =>{
+                    boton.classList.remove("button-active");
+                })
+
+
+                //agrego la clase u-visible al que le hago click
+                target.classList.add("u-visible");
+                boton.classList.add("button-active");
+                
+
+            
+
+            });
+        })
+
+
+    </script>
+</body>
+</html>
